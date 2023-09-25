@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>HomePage</title>
+	<title>My account</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 
@@ -102,7 +102,43 @@
 			</div>
 		</header>
 		<main class="page">
-
+			<div class="account__container">
+				<div class="account__box">
+					<div class="block-main-title__wrapper">
+						<h1 class="block-main-title__title block-main-title__title--center">My account</h1>
+					</div>
+					<div data-tabs data-tabs-animate="300" class="acoount__tabs tabs">
+						<nav data-tabs-titles class="tabs__navigation">
+							<button type="button" class="tabs__title-button _tab-active">Sign in</button>
+							<button type="button" class="tabs__title-button">Register</button>
+						</nav>
+						<div data-tabs-body class="tabs__content">
+							<div class="tabs__body form-login">
+								<form class="form-login__form" action="">
+									<input autocomplete="off" type="email" name="form[Email]" data-error="Error" placeholder="Email" class="form-login__input-email form-login__input-style">
+									<input autocomplete="off" type="password" name="form[Password]" data-error="Error" placeholder="Password" class="form-login__input-password form-login__input-style">
+									<div class="form-login__wrapper-checkbox">
+										<input autocomplete="off" id="checkbox-01" type="checkbox" name="form[checkbox]" class="form-login__input-checkbox">
+										<label for="checkbox-01">Remember me</label>
+									</div>
+									<button class="form-login__button button-submit" type="submit">SIGN IN</button>
+								</form>
+								<a class="tabs__change-pass" href="shange-pass.html">Have you forgotten your password?</a>
+							</div>
+							<div class="tabs__body">
+								<div class="tabs__body form-register">
+									<form class="form-register__form" action="">
+										<input autocomplete="off" type="email" name="form[Email]" data-error="Error" placeholder="Your Email" class="form-register__input-email  form-login__input-style">
+										<input autocomplete="off" type="password" name="form[Password]" data-error="Error" placeholder="Password" class="form-register__input-password  form-login__input-style">
+										<input autocomplete="off" type="password" name="form[Repeat-Password]" data-error="Error" placeholder="Repeat Password" class="form-register__input-password form-login__input-style">
+										<button class="form-register__button button-submit" type="submit">REGISTER</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 		<footer class="footer">
 			<div class="footer__container">
