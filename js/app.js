@@ -1,5 +1,6 @@
 (() => {
     "use strict";
+    const modules_flsModules = {};
     function isWebp() {
         function testWebP(callback) {
             let webP = new Image;
@@ -361,6 +362,21 @@
     }
     const da = new DynamicAdapt("max");
     da.init();
+    function openFavorite() {
+        if (document.querySelector(".menu-favorite")) document.addEventListener("click", (function(e) {
+            if (bodyLockStatus && e.target.closest(".menu-favorite")) {
+                bodyLock();
+                e.preventDefault();
+                let item = document.querySelector(".header-shoping-bag__wrapeer");
+                item.classList.add("open-favorite");
+            } else if (bodyLockStatus && e.target.closest(".shoping-bag__close")) {
+                bodyUnlock();
+                let close = document.querySelector(".header-shoping-bag__wrapeer");
+                close.classList.remove("open-favorite");
+            }
+        }));
+    }
+    modules_flsModules.openFavorite = openFavorite();
     window["FLS"] = true;
     isWebp();
     menuInit();

@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230925205811">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231121175805">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +18,7 @@
 		<header class="header">
 			<div class="header__container">
 				<div class="header-pc__wrapper">
-					<a href="" class="header-pc__logo"><img src="img/logo.svg" alt=""></a>
+					<a href="index.html" class="header-pc__logo"><img src="img/logo.svg" alt=""></a>
 					<div class="header-pc__menu-pc menu-pc">
 						<nav class="menu-pc__body">
 							<ul class="menu-pc__list">
@@ -60,6 +60,7 @@
 								<li class="menu-pc__item"><a href="about.html" class="menu-pc__link">Our Story</a></li>
 								<span></span>
 								<li class="menu-pc__item"><a href="" class="menu-pc__link"><img src="img/icon/search.svg" alt=""></a></li>
+								<li class="menu-pc__item menu-favorite"><a href="" class="menu-pc__link"><img src="img/icon/like.svg" alt=""></a></li>
 								<li class="menu-pc__item"><a href="" class="menu-pc__link"><img src="img/icon/shopping-cart.svg" alt=""><span class="menu-pc-mob__card-value"></span></a></li>
 								<li class="menu-pc__item"><a href="login.html" class="menu-pc__link"><img src="img/icon/profil.svg" alt=""></a></li>
 							</ul>
@@ -68,9 +69,10 @@
 				</div>
 				<div class="header-mobile__wrapper">
 					<div class="header-mobile__menu-header">
-						<a href="" class="header-mobile__logo"><img src="img/logo.svg" alt=""></a>
+						<a href="index.html" class="header-mobile__logo"><img src="img/logo.svg" alt=""></a>
 						<div class="header-mobile__menu-mob menu-mob">
 							<nav class="menu-mob__body">
+								<div class="menu-pc__item menu-mob__item menu-favorite"><a href="" class="menu-pc__link menu-mob__link "><img src="img/icon/like.svg" alt=""></a></div>
 								<div class="menu-mob__card-icon"><a class="menu-mob__card-link" href=""><img src="img/icon/shopping-cart.svg" alt=""><span class="menu-mob__card-value">4</span></a></div>
 								<button type="button" class="menu__icon icon-menu"><span></span></button>
 							</nav>
@@ -81,7 +83,7 @@
 									<li class="menu-mob__item"><a href="about.html" class="menu-mob__link">About</a></li>
 									<li class="menu-mob__item"><a href="" class="menu-mob__link">Blog</a></li>
 									<li class="menu-mob__item"><a href="" class="menu-mob__link">Help</a></li>
-									<li class="menu-mob__item"><a href="" class="menu-mob__link">Contact</a></li>
+									<li class="menu-mob__item"><a href="contact.html" class="menu-mob__link">Contact</a></li>
 									<li class="menu-mob__item"><a href="" class="menu-mob__link">Search</a></li>
 									<span class="menu-mob__item-line"></span>
 									<li class="menu-mob__item"><a href="login.html" class="menu-mob__link"><span><img src="img/icon/profil.svg" alt=""></span>My account</a></li>
@@ -99,20 +101,50 @@
 						</div>
 					</div>
 				</div>
+				<div class="header-shoping-bag__wrapeer  shoping-bag__wrapper">
+					<span class="shoping-bag__close"></span>
+					<h5 class="shoping-bag__title">Shopping bag</h5>
+					<div class="shoping-bag__wrapper-list list-wrapper">
+						<div class="list-wrapper__count">5 items</div>
+						<ul class="list-wrapper__list list">
+							<li class="list__item item">
+								<div class="item__remove"></div>
+								<div class="item__wrapper-image-ibg">
+									<picture><source srcset="img/product/Img-01.webp" type="image/webp"><img src="img/product/Img-01.jpg" alt=""></picture>
+								</div>
+								<div class="item__wrapper-text text">
+									<div class="text__wrapper">
+										<h6 class="text__title">Lira Earrings</h6>
+										<div class="text__description">Black / Medium</div>
+										<div class="text__price">$ 20,00</div>
+									</div>
+									<div class="text__quantity">QTY: - 1 +</div>
+								</div>
+							</li>
+						</ul>
+						<div class="list-wrapper__total total">
+							<div class="total__wrapper">
+								<div class="total__items-bag">Subtotal (5 items)</div>
+								<div class="total__price">$ 100,00</div>
+							</div>
+							<button type="button" class="total__button-bay">VIEW CART</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</header>
-		<main class="page">
+		<main class="page__change-pass">
 			<div class="change-pass__container">
-				<div class="change-pass__box--new-size">
+				<div class="change-pass__box--small">
 					<div class="block-main-title__wrapper">
 						<h1 class="block-main-title__title block-main-title__title--center">Have you Forgotten Your Password?</h1>
 						<div class="block-main-title__text block-main-title__text--center ">
-							<p>If you've forgotten your password, enter your e-mail address and we'll send you an e-mail </p>
+							<p>If you've forgotten your password, enter your e-mail address and we'll send you an e-mail</p>
 						</div>
 					</div>
-					<form class="form-login__form" action="">
-						<input autocomplete="off" type="email" name="form[Email]" data-error="Error" placeholder="Email" class="form-login__input-email form-login__input-style">
-						<button class="form-login__button button-submit" type="submit">RESET PASSWORD</button>
+					<form class="form-change__form" action="">
+						<input autocomplete="off" type="email" name="form[Email]" data-error="Error" placeholder="Email" class="form-change__input-email form-login__input-style">
+						<button class="form-change__button button-submit" type="submit">RESET PASSWORD</button>
 					</form>
 				</div>
 			</div>
@@ -122,7 +154,7 @@
 				<div data-da=".footer__container,768,2" class="footer__menu menu-footer">
 					<nav class="menu-footer__body">
 						<ul class="menu-footer__list">
-							<li class="menu-footer__item"><a href="" class="menu-footer__link">CONTACT</a></li>
+							<li class="menu-footer__item"><a href="contact.html" class="menu-footer__link">CONTACT</a></li>
 							<li class="menu-footer__item"><a href="" class="menu-footer__link">TERMS OF SERVICES</a></li>
 							<li class="menu-footer__item"><a href="" class="menu-footer__link">SHIPPING AND RETURNS</a></li>
 						</ul>
@@ -153,7 +185,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20230925205811"></script>
+	<script src="js/app.min.js?_v=20231121175805"></script>
 </body>
 
 </html>

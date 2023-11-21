@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>My account</title>
+	<title>Contact Us</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 
@@ -133,41 +133,32 @@
 				</div>
 			</div>
 		</header>
-		<main class="page__login">
-			<div class="account__container">
-				<div class="account__box--small">
+		<main class="page__contact">
+			<div class="contact_container">
+				<div class="contact__box--large">
 					<div class="block-main-title__wrapper">
-						<h1 class="block-main-title__title block-main-title__title--center">My account</h1>
-					</div>
-					<div data-tabs data-tabs-animate="300" class="acoount__tabs tabs">
-						<nav data-tabs-titles class="tabs__navigation">
-							<button type="button" class="tabs__title-button _tab-active">Sign in</button>
-							<button type="button" class="tabs__title-button">Register</button>
-						</nav>
-						<div data-tabs-body class="tabs__content">
-							<div class="tabs__body form-login">
-								<form class="form-login__form" action="">
-									<input autocomplete="off" type="email" name="form[Email]" data-error="Error" placeholder="Email" class="form-login__input-email form-login__input-style">
-									<input autocomplete="off" type="password" name="form[Password]" data-error="Error" placeholder="Password" class="form-login__input-password form-login__input-style">
-									<div class="form-login__wrapper-checkbox">
-										<input autocomplete="off" id="checkbox-01" type="checkbox" name="form[checkbox]" class="form-login__input-checkbox">
-										<label for="checkbox-01">Remember me</label>
-									</div>
-									<button class="form-login__button button-submit" type="submit">SIGN IN</button>
-								</form>
-								<a class="tabs__change-pass" href="shange-pass.html">Have you forgotten your password?</a>
-							</div>
-							<div class="tabs__body">
-								<div class="tabs__body form-register">
-									<form class="form-register__form" action="">
-										<input autocomplete="off" type="email" name="form[Email]" data-error="Error" placeholder="Your Email" class="form-register__input-email  form-login__input-style">
-										<input autocomplete="off" type="password" name="form[Password]" data-error="Error" placeholder="Password" class="form-register__input-password  form-login__input-style">
-										<input autocomplete="off" type="password" name="form[Repeat-Password]" data-error="Error" placeholder="Repeat Password" class="form-register__input-password form-login__input-style">
-										<button class="form-register__button button-submit" type="submit">REGISTER</button>
-									</form>
-								</div>
-							</div>
+						<h1 class="block-main-title__title block-main-title__title--center">Contact Us</h1>
+						<div class="block-main-title__description block-main-title__description--center">
+							<p>Say Hello send us your thoughts about our products or share
+								your ideas with our Team!</p>
 						</div>
+					</div>
+				</div>
+				<div class="contact__box--big">
+					<div class="contact-form__wrapper form-contact">
+						<form class="form-contact__form" action="">
+							<input autocomplete="off" type="text" name="form[First name]" data-error="Error" placeholder="First name" class="form-contact__input-first form-login__input-style">
+							<input autocomplete="off" type="text" name="form[Last name]" data-error="Error" placeholder="Last name" class="form-contact__input-flast form-login__input-style">
+							<input autocomplete="off" type="email" name="form[Email]" data-error="Error" placeholder="Email" class="form-contact__input-email form-login__input-style">
+							<select name="form[select]" data-class-modif="form" class="form-contact__select form-login__input-style">
+								<option value="1" selected>value</option>
+								<option value="2">value</option>
+								<option value="3">value</option>
+								<option value="4">value</option>
+							</select>
+							<textarea class="form-contact__text-area form-login__input-style" name="form[text-area]" cols="40" rows="1"></textarea>
+							<button class="form-contact__button button-submit" type="submit">SIGN IN</button>
+						</form>
 					</div>
 				</div>
 			</div>
