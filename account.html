@@ -2,12 +2,12 @@
 <html lang="en">
 
 <head>
-	<title>About</title>
+	<title>Account</title>
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231126132436">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231128152847">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -135,47 +135,87 @@
 		</header>
 		<main class="page__account">
 			<div class="account__container">
-				<div class="block-main-title__wrapper">
-					<h1 class="block-main-title__title block-main-title__title--center">My Account</h1>
-				</div>
-				<div data-tabs class="account__tabs">
-					<nav data-tabs-titles class="account__tabs__navigation">
-						<button type="button" class="account__tabs__title _tab-active">Dashboard</button>
-						<button type="button" class="account__tabs__title">Orders</button>
-						<button type="button" class="account__tabs__title">Downloads</button>
-						<button type="button" class="account__tabs__title">Addresses</button>
-						<button type="button" class="account__tabs__title">Account details</button>
-						<button type="button" class="account__tabs__title">Logout</button>
-
-						<button type="button" class="account__tabs__title">password and account details</button>
-					</nav>
-					<div data-tabs-body class="account__tabs__content">
-						<div class="account__tabs__body">
-							<div class="block-subtitle__wraper">
-								<div class="block-subtitle__description block-subtitle__description--fontsize-color">
-									<p>Hello Vitatheme (not Vitatheme? <button class="block-subtitle__description-log-out--accent">Log out</button>)</p>
-									<p>From your account dashboard you can view your <button type="button" class="account__tabs__title--accent">recent orders</button>, manage your <button type="button" class="account__tabs__title--accent">shipping and billing addresses</button>, and edit your <button type="button" class="account__tabs__title">password and account details</button>.</p>
+				<div data-tabs data-tabs-animate="200" class="account-tabs ">
+					<div class="swiper-tab account-tabs__wrapper">
+						<nav data-tabs-titles class="account-tabs__navigation swiper-wrapper">
+							<button type="button" class="swiper-slide account-tabs__title _tab-active">Dashboard</button>
+							<button type="button" class="swiper-slide account-tabs__title">Orders</button>
+							<button type="button" class="swiper-slide account-tabs__title">Downloads</button>
+							<button type="button" class="swiper-slide account-tabs__title">Addresses</button>
+							<button type="button" class="swiper-slide account-tabs__title">Account details</button>
+							<button type="button" class="swiper-slide account-tabs__title">Logout</button>
+						</nav>
+					</div>
+					<div data-tabs-body class="account-tabs__content">
+						<div class="account-tabs__body">
+							<div class="block-main-title__wrapper block-main-title__wrapper--mt">
+								<h1 class="block-main-title__title block-main-title__title--center">My Account</h1>
+							</div>
+							<div class="account__dashboard">
+								<p>Hello Vitatheme (not Vitatheme? <button class="dashboard__button">Log out</button>)</p>
+								<p>From your account dashboard you can view your <button type="button" class="dashboard__button">recent orders</button>, manage your <button type="button" class="dashboard__button">shipping and billing addresses</button>, and edit your <button type="button" class="account-tabs__title">password and account details</button>.</p>
+							</div>
+						</div>
+						<div class="account-tabs__body">
+							<div class="block-absence">
+								<div class="block-absence__text">No order has been made yet.</div>
+								<a href="" class="block-absence__link">BROWSE PRODUCT</a>
+							</div>
+						</div>
+						<div class="account-tabs__body">
+							<div class="block-absence">
+								<div class="block-absence__text">No downloads available yet.</div>
+								<a href="" class="block-absence__link">BROWSE PRODUCT</a>
+							</div>
+						</div>
+						<div class="account-tabs__body">
+							<div class="account-tabs__description">
+								<p>The following addresses will be used on the checkout page by default.</p>
+							</div>
+							<div class="account-tabs__addresses addsresses">
+								<!-- Тут будет еще форма с воодом даных. При нажатии на кнопку должна удалиться стректраа html и появится форма -->
+								<div class="addsresses__wrapper">
+									<div class="addsresses__billing billing">
+										<h3 class="billing__title">Billing address</h3>
+										<button class="billing__button">ADD</button>
+										<div class="billing__description">
+											<p>You have not set up this type of address yet.</p>
+										</div>
+									</div>
+									<div class="addsresses__shipping shipping">
+										<h3 class="shipping__title">Shipping address</h3>
+										<button class="shipping__button">ADD</button>
+										<div class="shipping__description">
+											<p>You have not set up this type of address yet.</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
-						<div class="account__tabs__body">
-							<div class="account__orders orders">
-								<div class="orders__text">No order has been made yet.</div>
-								<a href="" class="orders__link">BROWSE PRODUCT</a>
+						<div class="account-tabs__body">
+							<div class="block-main-title__wrapper">
+								<h1 class="block-main-title__title block-main-title__title--center">Account details</h1>
+							</div>
+							<div class="account-tab__details details">
+								<div class="details__wrapper wrapper__box--no-pd-small">
+									<form action="#" class="details__form">
+										<input autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="First name*" class="input__input-style">
+										<input autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Last name*" class="input__input-style">
+										<div class="form__wrapper-input">
+											<input autocomplete="off" type="text" name="form[]" data-error="Error" placeholder="Display name*" id="input-name" class="input__input-style">
+											<label for="input-name">This will be how your name will be displayed in the account section and in reviews.</label>
+										</div>
+										<input autocomplete="off" type="email" name="form[]" data-error="Error" placeholder="Email address*" class="input__input-style">
+										<h4 class="form__title">Password change</h4>
+										<input autocomplete="off" type="password" name="form[]" data-error="Error" placeholder="Current password (leave blank to leave unchanged)" class="input__input-style">
+										<input autocomplete="off" type="password" name="form[]" data-error="Error" placeholder="New password (leave blank to leave unchanged)" class="input__input-style">
+										<input autocomplete="off" type="password" name="form[]" data-error="Error" placeholder="Confirm new password" class="input__input-style">
+										<button type="submit" class="form__button-submit">SAVE CHANGES</button>
+									</form>
+								</div>
 							</div>
 						</div>
-						<div class="account__tabs__body">
-							<div class="account__downloads downloads">
-								<div class="downloads">No order has been made yet.</div>
-								<a href="" class="downloads">BROWSE PRODUCT</a>
-							</div>
-						</div>
-						<div class="account__tabs__body">
-
-						</div>
-						<div class="account__tabs__body">
-						</div>
-						<div class="account__tabs__body">
+						<div class="account-tabs__body">
 						</div>
 					</div>
 				</div>
@@ -217,7 +257,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231126132436"></script>
+	<script src="js/app.min.js?_v=20231128152847"></script>
 </body>
 
 </html>

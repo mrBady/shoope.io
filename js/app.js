@@ -2589,7 +2589,7 @@
         classes
     };
     const extendedDefaults = {};
-    class swiper_core_Swiper {
+    class Swiper {
         constructor() {
             let el;
             let params;
@@ -2605,7 +2605,7 @@
                     const newParams = utils_extend({}, params, {
                         el: containerEl
                     });
-                    swipers.push(new swiper_core_Swiper(newParams));
+                    swipers.push(new Swiper(newParams));
                 }));
                 return swipers;
             }
@@ -2962,25 +2962,25 @@
             return defaults;
         }
         static installModule(mod) {
-            if (!swiper_core_Swiper.prototype.__modules__) swiper_core_Swiper.prototype.__modules__ = [];
-            const modules = swiper_core_Swiper.prototype.__modules__;
+            if (!Swiper.prototype.__modules__) Swiper.prototype.__modules__ = [];
+            const modules = Swiper.prototype.__modules__;
             if (typeof mod === "function" && modules.indexOf(mod) < 0) modules.push(mod);
         }
         static use(module) {
             if (Array.isArray(module)) {
-                module.forEach((m => swiper_core_Swiper.installModule(m)));
-                return swiper_core_Swiper;
+                module.forEach((m => Swiper.installModule(m)));
+                return Swiper;
             }
-            swiper_core_Swiper.installModule(module);
-            return swiper_core_Swiper;
+            Swiper.installModule(module);
+            return Swiper;
         }
     }
     Object.keys(prototypes).forEach((prototypeGroup => {
         Object.keys(prototypes[prototypeGroup]).forEach((protoMethod => {
-            swiper_core_Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
+            Swiper.prototype[protoMethod] = prototypes[prototypeGroup][protoMethod];
         }));
     }));
-    swiper_core_Swiper.use([ Resize, Observer ]);
+    Swiper.use([ Resize, Observer ]);
     function create_element_if_not_defined_createElementIfNotDefined(swiper, originalParams, params, checkProps) {
         if (swiper.params.createElements) Object.keys(checkProps).forEach((key => {
             if (!params[key] && params.auto === true) {
@@ -3337,7 +3337,7 @@
         });
     }
     function initSliders() {
-        if (document.querySelector(".swiper")) new swiper_core_Swiper(".swiper", {
+        if (document.querySelector(".swiper")) new Swiper(".swiper", {
             modules: [ Pagination ],
             observer: true,
             observeParents: true,
@@ -3353,6 +3353,46 @@
     }
     window.addEventListener("load", (function(e) {
         initSliders();
+    }));
+    let swiperInstance;
+    function initSwiper() {
+        const isMobile = window.innerWidth < 768;
+        if (swiperInstance && (isMobile && swiperInstance.isBeginning || !isMobile && swiperInstance.isEnd)) return;
+        destroySwiper();
+        if (isMobile) {
+            swiperInstance = new Swiper(".swiper-tab", {
+                modules: [],
+                observer: true,
+                observeParents: true,
+                slidesPerView: 1.5,
+                speed: 800
+            });
+            addSwiperClasses();
+        } else removeSwiperClasses();
+    }
+    function destroySwiper() {
+        if (swiperInstance && swiperInstance.destroy) {
+            swiperInstance.destroy();
+            swiperInstance = null;
+        }
+    }
+    function addSwiperClasses() {
+        const elementsWithoutSwiperClasses = document.querySelectorAll(".swiper-tab:not(.swiper-tab), .swiper-wrapper:not(.swiper-wrapper), .swiper-slide:not(.swiper-slide)");
+        elementsWithoutSwiperClasses.forEach((element => {
+            element.classList.add("swiper-tab", "swiper-wrapper", "swiper-slide");
+        }));
+    }
+    function removeSwiperClasses() {
+        const elementsWithSwiperClasses = document.querySelectorAll(".swiper-tab, .swiper-wrapper, .swiper-slide");
+        elementsWithSwiperClasses.forEach((element => {
+            element.classList.remove("swiper-tab", "swiper-wrapper", "swiper-slide");
+        }));
+    }
+    window.addEventListener("resize", (function() {
+        initSwiper();
+    }));
+    window.addEventListener("load", (function(e) {
+        initSwiper();
     }));
     let addWindowScrollEvent = false;
     setTimeout((() => {
