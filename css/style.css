@@ -1250,7 +1250,6 @@ h6 {
 .account-tabs__wrapper {
   margin-bottom: 2.5rem;
   border-bottom: 1px solid var(--light-colors-gray-light);
-  padding-top: 6.1875rem;
   border-top: 1px solid var(--light-colors-gray-light);
 }
 
@@ -1270,10 +1269,8 @@ h6 {
 
 .account-tabs__title {
   color: var(--light-colors-dark-gray-light);
-  font-size: 1.25rem;
   font-weight: 400;
   line-height: 1.625rem;
-  padding-bottom: 2.125rem;
 }
 
 .account-tabs__content {
@@ -1291,10 +1288,6 @@ h6 {
   margin-top: 2.25rem;
 }
 
-.account-tabs__addresses {
-  margin-top: 2.8125rem;
-}
-
 .account-tabs__title._tab-active {
   color: var(--light-colors-black-light);
   border-bottom: 1px solid var(--light-colors-black-light);
@@ -1310,17 +1303,16 @@ h6 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 5.5rem;
-     -moz-column-gap: 5.5rem;
-          column-gap: 5.5rem;
 }
 
 .addsresses__billing {
-  width: 36.25rem;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .addsresses__shipping {
-  width: 36.25rem;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .billing__title {
@@ -1403,9 +1395,37 @@ h6 {
   border: 1px solid var(--light-colors-white-light);
   background: var(--light-colors-black-light);
   color: var(--light-colors-white-light);
-  padding: 1rem 11.875rem;
+  padding: 1rem 0;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
+}
+
+.billing__form {
+  display: none;
+}
+
+.billing__form-open {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.input__name {
+  -ms-flex-preferred-size: 47%;
+      flex-basis: 47%;
 }
 
 .swiper {
@@ -2684,13 +2704,22 @@ button.swiper-pagination-bullet {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    gap: 3.125rem;
+  }
+
+  .addsresses__wrapper {
+    -webkit-column-gap: 5.5rem;
+       -moz-column-gap: 5.5rem;
+            column-gap: 5.5rem;
   }
 }
 
 @media (min-width: 47.99875em) and (min-width: 79.875em) {
   .footer__form {
     width: 25rem;
+  }
+
+  .account-tabs__navigation {
+    gap: 3.125rem;
   }
 }
 
@@ -2741,6 +2770,10 @@ button.swiper-pagination-bullet {
 
   .button-submit {
     min-height: 3.3125rem;
+  }
+
+  [class*=__input-style] {
+    font-size: 1rem;
   }
 
   .footer__container {
@@ -2844,6 +2877,35 @@ button.swiper-pagination-bullet {
   .info-wrapper__button-view {
     font-size: 1.25rem;
   }
+
+  .swiper-tab,
+  .account-tabs__wrapper {
+    padding-top: 6.1875rem;
+  }
+
+  .account-tabs__title {
+    font-size: 1.25rem;
+  }
+
+  .account-tabs__title {
+    padding-bottom: 2.125rem;
+  }
+
+  .account-tabs__addresses {
+    margin-top: 2.5rem;
+  }
+
+  .form__button-submit {
+    padding-right: 11.875rem;
+  }
+
+  .form__button-submit {
+    padding-left: 11.875rem;
+  }
+
+  .billing__form-open {
+    gap: 2.3125rem;
+  }
 }
 
 @media (max-width: 20em) {
@@ -2893,6 +2955,10 @@ button.swiper-pagination-bullet {
 
   .button-submit {
     min-height: 2rem;
+  }
+
+  [class*=__input-style] {
+    font-size: 0.875rem;
   }
 
   .footer__container {
@@ -2995,6 +3061,35 @@ button.swiper-pagination-bullet {
 
   .info-wrapper__button-view {
     font-size: 0.75rem;
+  }
+
+  .swiper-tab,
+  .account-tabs__wrapper {
+    padding-top: 2.1875rem;
+  }
+
+  .account-tabs__title {
+    font-size: 1rem;
+  }
+
+  .account-tabs__title {
+    padding-bottom: 0.625rem;
+  }
+
+  .account-tabs__addresses {
+    margin-top: 1.4375rem;
+  }
+
+  .form__button-submit {
+    padding-right: 3.125rem;
+  }
+
+  .form__button-submit {
+    padding-left: 3.125rem;
+  }
+
+  .billing__form-open {
+    gap: 1.375rem;
   }
 }
 
@@ -3247,6 +3342,22 @@ button.swiper-pagination-bullet {
   .info-wrapper__button-view {
     padding: 0.75rem 1.375rem;
   }
+
+  .addsresses__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 3rem;
+  }
+
+  .form__wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 1.375rem;
+  }
 }
 
 @media (max-width: 47.99875em) and (any-hover: none) {
@@ -3441,6 +3552,18 @@ button.swiper-pagination-bullet {
 @supports not (min-height: clamp( 2rem , 1.5615866388rem  +  2.1920668058vw , 3.3125rem )) {
     .button-submit {
       min-height: calc(2rem + 1.3125 * (100vw - 20rem) / 59.875);
+    }
+}
+
+@supports (font-size: clamp( 0.875rem , 0.8332463466rem  +  0.2087682672vw , 1rem )) {
+    [class*=__input-style] {
+      font-size: clamp( 0.875rem , 0.8332463466rem  +  0.2087682672vw , 1rem );
+    }
+}
+
+@supports not (font-size: clamp( 0.875rem , 0.8332463466rem  +  0.2087682672vw , 1rem )) {
+    [class*=__input-style] {
+      font-size: calc(0.875rem + 0.125 * (100vw - 20rem) / 59.875);
     }
 }
 
@@ -3747,6 +3870,92 @@ button.swiper-pagination-bullet {
       font-size: calc(0.75rem + 0.5 * (100vw - 20rem) / 59.875);
     }
 }
+
+@supports (padding-top: clamp( 2.1875rem , 0.8513830898rem  +  6.6805845511vw , 6.1875rem )) {
+    .swiper-tab,
+    .account-tabs__wrapper {
+      padding-top: clamp( 2.1875rem , 0.8513830898rem  +  6.6805845511vw , 6.1875rem );
+    }
+}
+
+@supports not (padding-top: clamp( 2.1875rem , 0.8513830898rem  +  6.6805845511vw , 6.1875rem )) {
+    .swiper-tab,
+    .account-tabs__wrapper {
+      padding-top: calc(2.1875rem + 4 * (100vw - 20rem) / 59.875);
+    }
+}
+
+@supports (font-size: clamp( 1rem , 0.9164926931rem  +  0.4175365344vw , 1.25rem )) {
+    .account-tabs__title {
+      font-size: clamp( 1rem , 0.9164926931rem  +  0.4175365344vw , 1.25rem );
+    }
+}
+
+@supports not (font-size: clamp( 1rem , 0.9164926931rem  +  0.4175365344vw , 1.25rem )) {
+    .account-tabs__title {
+      font-size: calc(1rem + 0.25 * (100vw - 20rem) / 59.875);
+    }
+}
+
+@supports (padding-bottom: clamp( 0.625rem , 0.1239561587rem  +  2.5052192067vw , 2.125rem )) {
+    .account-tabs__title {
+      padding-bottom: clamp( 0.625rem , 0.1239561587rem  +  2.5052192067vw , 2.125rem );
+    }
+}
+
+@supports not (padding-bottom: clamp( 0.625rem , 0.1239561587rem  +  2.5052192067vw , 2.125rem )) {
+    .account-tabs__title {
+      padding-bottom: calc(0.625rem + 1.5 * (100vw - 20rem) / 59.875);
+    }
+}
+
+@supports (margin-top: clamp( 1.4375rem , 1.0825939457rem  +  1.7745302714vw , 2.5rem )) {
+    .account-tabs__addresses {
+      margin-top: clamp( 1.4375rem , 1.0825939457rem  +  1.7745302714vw , 2.5rem );
+    }
+}
+
+@supports not (margin-top: clamp( 1.4375rem , 1.0825939457rem  +  1.7745302714vw , 2.5rem )) {
+    .account-tabs__addresses {
+      margin-top: calc(1.4375rem + 1.0625 * (100vw - 20rem) / 59.875);
+    }
+}
+
+@supports (padding-right: clamp( 3.125rem , 0.2022442589rem  +  14.6137787056vw , 11.875rem )) {
+    .form__button-submit {
+      padding-right: clamp( 3.125rem , 0.2022442589rem  +  14.6137787056vw , 11.875rem );
+    }
+}
+
+@supports not (padding-right: clamp( 3.125rem , 0.2022442589rem  +  14.6137787056vw , 11.875rem )) {
+    .form__button-submit {
+      padding-right: calc(3.125rem + 8.75 * (100vw - 20rem) / 59.875);
+    }
+}
+
+@supports (padding-left: clamp( 3.125rem , 0.2022442589rem  +  14.6137787056vw , 11.875rem )) {
+    .form__button-submit {
+      padding-left: clamp( 3.125rem , 0.2022442589rem  +  14.6137787056vw , 11.875rem );
+    }
+}
+
+@supports not (padding-left: clamp( 3.125rem , 0.2022442589rem  +  14.6137787056vw , 11.875rem )) {
+    .form__button-submit {
+      padding-left: calc(3.125rem + 8.75 * (100vw - 20rem) / 59.875);
+    }
+}
+
+@supports (gap: clamp( 1.375rem , 1.0618475992rem  +  1.5657620042vw , 2.3125rem )) {
+    .billing__form-open {
+      gap: clamp( 1.375rem , 1.0618475992rem  +  1.5657620042vw , 2.3125rem );
+    }
+}
+
+@supports not (gap: clamp( 1.375rem , 1.0618475992rem  +  1.5657620042vw , 2.3125rem )) {
+    .billing__form-open {
+      gap: calc(1.375rem + 0.9375 * (100vw - 20rem) / 59.875);
+    }
+}
 }
 
 @media (min-width: 47.99875em) and (min-width: 20em) and (max-width: 79.875em) {
@@ -3761,11 +3970,27 @@ button.swiper-pagination-bullet {
       width: calc(15.625rem + 9.375 * (100vw - 20rem) / 59.875);
     }
 }
+
+@supports (gap: clamp( 0.9375rem , 0.2068110647rem  +  3.6534446764vw , 3.125rem )) {
+    .account-tabs__navigation {
+      gap: clamp( 0.9375rem , 0.2068110647rem  +  3.6534446764vw , 3.125rem );
+    }
+}
+
+@supports not (gap: clamp( 0.9375rem , 0.2068110647rem  +  3.6534446764vw , 3.125rem )) {
+    .account-tabs__navigation {
+      gap: calc(0.9375rem + 2.1875 * (100vw - 20rem) / 59.875);
+    }
+}
 }
 
 @media (min-width: 47.99875em) and (max-width: 20em) {
   .footer__form {
     width: 15.625rem;
+  }
+
+  .account-tabs__navigation {
+    gap: 0.9375rem;
   }
 }
 

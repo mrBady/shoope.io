@@ -3364,7 +3364,7 @@
                 modules: [],
                 observer: true,
                 observeParents: true,
-                slidesPerView: 1.5,
+                slidesPerView: 2,
                 speed: 800
             });
             addSwiperClasses();
@@ -3502,6 +3502,17 @@
         }));
     }
     modules_flsModules.openFavorite = openFavorite();
+    function openBillingAddress() {
+        const billingForm = document.querySelector(".billing__form");
+        const addButton = document.querySelector("#billing-add");
+        const descriptionBlock = document.querySelector(".billing__description");
+        if (addButton) addButton.addEventListener("click", (function(e) {
+            e.preventDefault();
+            billingForm.classList.toggle("billing__form-open");
+            if (billingForm.classList.contains("billing__form-open")) descriptionBlock.style.display = "none"; else descriptionBlock.style.display = "block";
+        }));
+    }
+    modules_flsModules.openBilling = openBillingAddress();
     window["FLS"] = true;
     isWebp();
     menuInit();

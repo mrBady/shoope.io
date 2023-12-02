@@ -7,7 +7,7 @@
 	<meta name="format-detection" content="telephone=no">
 
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231128152847">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231202095631">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -177,10 +177,28 @@
 								<div class="addsresses__wrapper">
 									<div class="addsresses__billing billing">
 										<h3 class="billing__title">Billing address</h3>
-										<button class="billing__button">ADD</button>
+										<button id="billing-add" class="billing__button">ADD</button>
 										<div class="billing__description">
 											<p>You have not set up this type of address yet.</p>
 										</div>
+										<form action="#" class="billing__form">
+											<div class="form__wrapper">
+												<input autocomplete="off" type="text" name="form[]" placeholder="First name *" class="input__input-style input__name">
+												<input autocomplete="off" type="text" name="form[]" placeholder="Last name *" class="input__input-style input__name">
+											</div>
+											<select id="country" name="country" class="input__input-style">
+												<option value="1">USA</option>
+												<option value="2">Europe</option>
+												<option value="3">Asia</option>
+											</select>
+											<input autocomplete="off" type="text" name="form[]" placeholder="Company Name" class="input__input-style">
+											<input autocomplete="off" type="text" name="form[]" placeholder="Street Address *" class="input__input-style">
+											<input autocomplete="off" type="text" name="form[]" placeholder="Postcode / ZIP *" class="input__input-style">
+											<input autocomplete="off" type="text" name="form[]" placeholder="Town / City *" class="input__input-style">
+											<input autocomplete="off" type="number" name="form[]" placeholder="Phone *" class="input__input-style">
+											<input autocomplete="off" type="email" name="form[]" placeholder="Email *" class="input__input-style">
+											<button type="submit" class="form__button-submit">SAVE ADDRESS</button>
+										</form>
 									</div>
 									<div class="addsresses__shipping shipping">
 										<h3 class="shipping__title">Shipping address</h3>
@@ -257,7 +275,7 @@
 			</div>
 		</footer>
 	</div>
-	<script src="js/app.min.js?_v=20231128152847"></script>
+	<script src="js/app.min.js?_v=20231202095631"></script>
 </body>
 
 </html>
